@@ -24,4 +24,9 @@ public class TestRunnerKarate {
 	Karate testDeleteProduct() {
 		return Karate.run("DeleteProduct").relativeTo(getClass());
 	}
+	
+	@Karate.Test
+	Karate testAll() {
+		return Karate.run("All").relativeTo(getClass());
+	}
 }
