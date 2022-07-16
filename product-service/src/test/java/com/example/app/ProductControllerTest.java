@@ -1,5 +1,6 @@
 package com.example.app;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Assert;
@@ -30,7 +31,7 @@ public class ProductControllerTest {
 	public void init() {
 		MockitoAnnotations.initMocks(this);
 		Mockito.when(productService.saveProduct(new Product(1, "Type", 500.0, "Vendor"))).thenReturn(1);
-		Mockito.when(productService.getAllProduct()).thenReturn(List.of(new Product(1, "Type", 500.0, "Vendor")));
+		Mockito.when(productService.getAllProduct()).thenReturn(Arrays.asList(new Product(1, "Type", 500.0, "Vendor")));
 		Mockito.when(productService.updateProduct(new Product(1, "Type", 500.0, "Vendor Typeeeee"))).thenReturn(1);
 		Mockito.when(productService.deleteProduct(1)).thenReturn(1);
 	}

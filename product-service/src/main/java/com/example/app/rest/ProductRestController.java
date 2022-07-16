@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -25,6 +24,7 @@ public class ProductRestController {
 	
 	@Autowired
 	private IProductService service;
+	public static final String PRODUCT_SERVICE="productService";
 
 
 	//1. save product
@@ -66,7 +66,7 @@ public class ProductRestController {
 
 		return resp;
 	}
-
+	
 	//3. fetch one product by id
 	@GetMapping("/find/{id}")
 	public ResponseEntity<?> getOneProduct(
